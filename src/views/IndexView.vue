@@ -2,11 +2,11 @@
   <div class="index-root">
     <v-app-bar app dark dense flat outlined elevation="14" color="primary">
       <v-icon>mdi-view-module</v-icon>
-      <v-app-bar-title>数创视图库智慧平台</v-app-bar-title>
+      <v-app-bar-title title="数创视图库智慧平台">数创视图库智慧平台</v-app-bar-title>
       <v-spacer></v-spacer>
       <div class="nav">
         <div class="nav-items">
-          <div class="nav-item" v-for="(item, index) in nav_items" :key="'nav-item-' + index" @click.stop="OnHandleNavItem($el, item)">
+          <div class="nav-item" :title="item.title" v-for="(item, index) in nav_items" :key="'nav-item-' + index" @click.stop="OnHandleNavItem($el, item)">
             <span :class="{ 'active': item.selected }">{{ item.title }}</span>
           </div>
         </div>
@@ -14,7 +14,7 @@
       <v-spacer></v-spacer>
       <v-menu offset-y bottom rounded="lg" origin="center center" transition="scale-transition" v-if="current_user">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn rounded text color="white" dark v-bind="attrs" v-on="on"><v-icon>mdi-account-circle</v-icon>{{ current_user.user_name }}</v-btn>
+          <v-btn rounded text color="white" dark v-bind="attrs" v-on="on" :title="current_user.user_name"><v-icon>mdi-account-circle</v-icon>{{ current_user.user_name }}</v-btn>
         </template>
         <v-list>
           <v-list-item>
@@ -123,43 +123,37 @@ export default class IndexView extends Vue {
     this.nav_items.push({
       name: "resource",
       title: "资源库",
-      selected: href.indexOf("/resource") > 0,
-      children: []
+      selected: href.indexOf("/resource") > 0
     });
 
     this.nav_items.push({
       name: "tag",
       title: "标签管理",
-      selected: href.indexOf("/tag") > 0,
-      children: []
+      selected: href.indexOf("/tag") > 0
     });
 
     this.nav_items.push({
       name: "govern",
       title: "数据治理",
-      selected: href.indexOf("/govern") > 0,
-      children: []
+      selected: href.indexOf("/govern") > 0
     });
 
     this.nav_items.push({
       name: "ledger",
       title: "数据台账",
-      selected: href.indexOf("/ledger") > 0,
-      children: []
+      selected: href.indexOf("/ledger") > 0
     });
 
     this.nav_items.push({
       name: "workflow",
       title: "流程管理",
-      selected: href.indexOf("/workflow") > 0,
-      children: []
+      selected: href.indexOf("/workflow") > 0
     });
 
     this.nav_items.push({
       name: "system",
       title: "系统管理",
-      selected: href.indexOf("/system") > 0,
-      children: []
+      selected: href.indexOf("/system") > 0
     });
 
     const selected_nav_items = this.nav_items.filter((item: any) => item.selected);
