@@ -1,5 +1,25 @@
 <template>
   <div class="tag-root">
+    <div class="tag-toolbar">
+      <v-toolbar color="white" dark>
+        <v-toolbar-title class="tag-toolbar-title">标签库</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn-toggle>
+          <v-btn>
+            <v-icon>mdi-format-align-left</v-icon>
+          </v-btn>
+          <v-btn>
+            <v-icon>mdi-format-align-center</v-icon>
+          </v-btn>
+          <v-btn>
+            <v-icon>mdi-format-align-right</v-icon>
+          </v-btn>
+          <v-btn>
+            <v-icon>mdi-format-align-justify</v-icon>
+          </v-btn>
+        </v-btn-toggle>
+      </v-toolbar>
+    </div>
     <v-data-table density="compact" :headers="headers" :items="items" :loading="loading" :search="search">
       <template v-slot:top>
         <v-toolbar flat>
@@ -161,14 +181,17 @@ export default class TagView extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.role-root {
+.tag-root {
   width: 100%;
-  height: calc(100vh - 50px);
-  padding: 16px 16px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow: auto;
+  .tag-toolbar {
+    height: 80px;
+    .tag-toolbar-title {
+      color: #2196f3;
+    }
+  }
   .v-data-table {
     width: 100%;
     height: calc(100vh - 50px);

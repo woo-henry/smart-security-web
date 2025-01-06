@@ -2,7 +2,7 @@
   <div class="camera-root">
     <div class="camera-toolbar">
       <v-toolbar color="white" dark>
-        <v-toolbar-title>相机设备</v-toolbar-title>
+        <v-toolbar-title class="camera-toolbar-title">相机设备</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn-toggle>
           <v-btn>
@@ -47,6 +47,9 @@ export default class CameraView extends Vue {
   flex-direction: column;
   .camera-toolbar {
     height: 80px;
+    .camera-toolbar-title {
+      color: #2196f3;
+    }
   }
 }
 </style>
