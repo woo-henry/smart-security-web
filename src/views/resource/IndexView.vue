@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="content" v-if="current_menu_item">
-      <camera-view v-if="current_menu_item.name ==='camera'"></camera-view>
+      <device-view v-if="current_menu_item.name ==='camera'"></device-view>
       <platform-view v-else-if="current_menu_item.name ==='platform'"></platform-view>
     </div>
   </div>
@@ -18,13 +18,13 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import CameraView from "./CameraView.vue";
+import DeviceView from "./DeviceView.vue";
 import PlatformView from "./PlatformView.vue";
 
 @Component({
   name: "resource-view",
   components: {
-    CameraView,
+    DeviceView,
     PlatformView
   }
 })
@@ -79,7 +79,7 @@ export default class ResourceView extends Vue {
   display: flex;
   flex-direction: row;
   .menu {
-    width: 200px;
+    width: 136px;
     position: sticky;
     top: 64px;
     left: 0px;
@@ -120,7 +120,7 @@ export default class ResourceView extends Vue {
     }
   }
   .content {
-    width: calc(100% - 200px);
+    width: 100%;
   }
 }
 </style>

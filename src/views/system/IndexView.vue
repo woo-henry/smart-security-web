@@ -1,34 +1,6 @@
 <template>
   <div class="system-root">
-    <v-data-table density="compact" :headers="headers" :items="items" :loading="loading" :search="search">
-      <template v-slot:top>
-        <v-toolbar flat>
-          <v-toolbar-title>{{ `用户列表 ( ${items.length} )` }}</v-toolbar-title>
-          <v-dialog v-model="delete_dialog_visible" max-width="500px">
-            <v-card>
-              <v-card-title class="text-h5">是否删除用户?</v-card-title>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="blue-darken-1" variant="text" @click="HandleDeleteCancel">取消</v-btn>
-                <v-btn color="blue-darken-1" variant="text" @click="HandleDeleteConfirm">确定</v-btn>
-                <v-spacer></v-spacer>
-              </v-card-actions>
-            </v-card>
-          </v-dialog>
-        </v-toolbar>
-        <v-text-field v-model="search" label="搜索" prepend-inner-icon="mdi-magnify" variant="outlined" single-line hide-details></v-text-field>
-      </template>
-      <template v-slot:item="{ item }">
-        <tr>
-          <td>{{ item.user_name }}</td>
-          <td>{{ item.phone_number }}</td>
-          <td>{{ item.created_time }}</td>
-          <td>
-            <v-icon title="删除" @click="HandleItemDelete(item)">mdi-delete</v-icon>
-          </td>
-        </tr>
-      </template>
-    </v-data-table>
+
   </div>
 </template>
 

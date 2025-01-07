@@ -1,7 +1,9 @@
 <template>
   <div class="login-root">
     <v-app-bar app dark dense flat outlined elevation="14" color="primary">
-      <v-icon>mdi-view-module</v-icon>
+      <v-avatar color="white" size="24">
+        <img src="favicon-16x16.png" alt="数创视图库智慧平台">
+      </v-avatar>
       <v-toolbar-title>数创视图库智慧平台</v-toolbar-title>
     </v-app-bar>
     <div class="login-title">
@@ -10,7 +12,7 @@
     <div class="login-form">
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field label="用户名" v-model="user_name" :rules="user_name_rules" required></v-text-field>
-        <v-text-field label="密码" v-model="user_password" :rules="user_password_rules" required></v-text-field>
+        <v-text-field label="密码" type="password" v-model="user_password" :rules="user_password_rules" required></v-text-field>
         <v-btn color="success" :disabled="!valid" @click="OnHandleLogin">登录</v-btn>
       </v-form>
     </div>
@@ -75,7 +77,9 @@ export default class LoginView extends Vue {
   .v-toolbar__title {
     margin: 0px 8px;
   }
-
+  .v-app-bar-title {
+    padding-left: 4px;
+  }
   .login-title {
     height: 30%;
     display: flex;

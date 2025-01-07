@@ -1,7 +1,9 @@
 <template>
   <div class="index-root">
     <v-app-bar app dark dense flat outlined elevation="14" color="primary">
-      <v-icon>mdi-view-module</v-icon>
+      <v-avatar color="white" size="24">
+        <img src="favicon-16x16.png" alt="数创视图库智慧平台">
+      </v-avatar>
       <v-app-bar-title title="数创视图库智慧平台">数创视图库智慧平台</v-app-bar-title>
       <v-spacer></v-spacer>
       <div class="nav">
@@ -14,11 +16,14 @@
       <v-spacer></v-spacer>
       <v-menu offset-y bottom rounded="lg" origin="center center" transition="scale-transition" v-if="current_user">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn rounded text color="white" dark v-bind="attrs" v-on="on" :title="current_user.user_name"><v-icon>mdi-account-circle</v-icon>{{ current_user.user_name }}</v-btn>
+          <v-btn rounded text color="white" dark v-bind="attrs" v-on="on" :title="current_user.user_name">
+            <v-icon>mdi-account-circle</v-icon>
+            <span class="menu-user">{{ current_user.user_name }}</span>
+          </v-btn>
         </template>
         <v-list>
-          <v-list-item>
-            <v-list-item-title class="" @click="HandleUpdateUser">修改密码</v-list-item-title>
+          <v-list-item link>
+            <v-list-item-title @click="HandleUpdateUser">修改密码</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -172,7 +177,7 @@ export default class IndexView extends Vue {
   }
 
   HandleSaveCancel() {
-    this.save_dialog_visible = true;
+    this.save_dialog_visible = false;
   }
 
   HandleSaveConfirm() {
@@ -244,6 +249,12 @@ export default class IndexView extends Vue {
         }
       }
     }
+  }
+  .v-app-bar-title {
+    padding-left: 4px;
+  }
+  .menu-user {
+    padding-left: 4px;
   }
   .main {
     height: calc(100vh - 50px);
