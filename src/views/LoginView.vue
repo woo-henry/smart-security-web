@@ -2,9 +2,9 @@
   <div class="login-root">
     <v-app-bar app dark dense flat outlined elevation="14" color="primary">
       <v-avatar color="white" size="24">
-        <img src="favicon-16x16.png" alt="数创视图库智慧平台">
+        <img src="favicon-16x16.png" alt="数创视图库交换平台">
       </v-avatar>
-      <v-toolbar-title>数创视图库智慧平台</v-toolbar-title>
+      <v-toolbar-title>数创视图库交换平台</v-toolbar-title>
     </v-app-bar>
     <div class="login-title">
       <span>用户登录</span>

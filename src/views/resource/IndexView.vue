@@ -80,6 +80,7 @@ export default class ResourceView extends Vue {
   flex-direction: row;
   .menu {
     width: 136px;
+    min-width: 136px;
     position: sticky;
     top: 64px;
     left: 0px;

@@ -51,30 +51,30 @@
           <v-container>
             <v-row>
               <v-col cols="12">
-                <v-text-field v-model="item.platform_name" label="系统名称" :counter="64"></v-text-field>
+                <v-text-field v-model="item.platform_name" label="系统名称" :counter="64" required></v-text-field>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="9">
-                <v-text-field v-model="item.platform_address" label="服务地址" :counter="64"></v-text-field>
+                <v-text-field v-model="item.platform_address" label="服务地址" :counter="64" required></v-text-field>
               </v-col>
               <v-col cols="3">
-                <v-text-field v-model="item.platform_port" label="服务端口" type="number"></v-text-field>
+                <v-text-field v-model="item.platform_port" label="服务端口" type="number" required></v-text-field>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="12">
-                <v-text-field v-model="item.platform_account" label="登录账号" :counter="32"></v-text-field>
+                <v-text-field v-model="item.platform_account" label="登录账号" :counter="32" required></v-text-field>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="12">
-                <v-text-field v-model="item.platform_password" label="登录密码" type="password" :counter="32"></v-text-field>
+                <v-text-field v-model="item.platform_password" label="登录密码" type="password" :counter="32" required></v-text-field>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="6">
-                <v-text-field v-model="item.sort_key" label="排序代码" type="number"></v-text-field>
+                <v-text-field v-model="item.sort_key" label="排序代码" type="number" required></v-text-field>
               </v-col>
               <v-col cols="6">
                 <v-checkbox v-model="item.enabled" label="是否启用" color="green" hide-details></v-checkbox>

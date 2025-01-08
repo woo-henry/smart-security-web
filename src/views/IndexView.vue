@@ -2,9 +2,9 @@
   <div class="index-root">
     <v-app-bar app dark dense flat outlined elevation="14" color="primary">
       <v-avatar color="white" size="24">
-        <img src="favicon-16x16.png" alt="数创视图库智慧平台">
+        <img src="favicon-16x16.png" alt="数创视图库交换平台">
       </v-avatar>
-      <v-app-bar-title title="数创视图库智慧平台">数创视图库智慧平台</v-app-bar-title>
+      <v-app-bar-title title="数创视图库交换平台">数创视图库交换平台</v-app-bar-title>
       <v-spacer></v-spacer>
       <div class="nav">
         <div class="nav-items">
@@ -41,12 +41,12 @@
             <v-container>
               <v-row>
                 <v-col cols="12">
-                  <v-text-field v-model="old_password" label="旧密码"></v-text-field>
+                  <v-text-field v-model="old_password" label="旧密码" required></v-text-field>
                 </v-col>
               </v-row>
               <v-row>
                 <v-col cols="12">
-                  <v-text-field v-model="new_password" label="新密码"></v-text-field>
+                  <v-text-field v-model="new_password" label="新密码" required></v-text-field>
                 </v-col>
               </v-row>
             </v-container>
@@ -125,6 +125,12 @@ export default class IndexView extends Vue {
   }
 
   private CreateNavItems(href: string) {
+    this.nav_items.push({
+      name: "home",
+      title: "首页",
+      selected: href.indexOf("/home") > 0
+    });
+
     this.nav_items.push({
       name: "resource",
       title: "资源库",

@@ -28,7 +28,7 @@
                 <v-btn color="primary" title="编辑分组" icon @click.stop="HandleGroupEdit()">
                   <v-icon>mdi-pencil</v-icon>
                 </v-btn>
-                <v-btn color="primary" title="编辑分组" icon @click.stop="HandleGroupDelete()">
+                <v-btn color="primary" title="删除分组" icon @click.stop="HandleGroupDelete()">
                   <v-icon>mdi-delete</v-icon>
                 </v-btn>
               </div>
@@ -90,7 +90,7 @@
           <v-container>
             <v-row>
               <v-col cols="12">
-                <v-text-field v-model="group.group_name" label="分组名称" :counter="64"></v-text-field>
+                <v-text-field v-model="group.group_name" label="分组名称" :counter="64" required></v-text-field>
               </v-col>
             </v-row>
             <v-row>
